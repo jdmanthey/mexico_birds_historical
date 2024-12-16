@@ -1,0 +1,13 @@
+mkdir 01_cleaned_h
+mkdir 01_split_h
+mkdir 01_working_h
+mkdir 01_bam_files
+mkdir 20_combine_lanes
+mkdir 21_split_h_script
+mkdir 22_dedup_h_script
+mkdir 23_cat_h_script
+mkdir 24_dedup2_h_script
+mkdir 25_merge_h_script
+mkdir 26_qual_h_script
+mkdir 27_align_script_h
+mkdir 28_stats_script_h
