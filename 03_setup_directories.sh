@@ -1,4 +1,5 @@
 mkdir 01_cleaned_h
+mkdir 01_cleaned_m
 mkdir 01_split_h
 mkdir 01_working_h
 mkdir 01_bam_files
