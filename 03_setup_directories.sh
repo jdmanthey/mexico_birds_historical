@@ -12,3 +12,5 @@ mkdir 25_merge_h_script
 mkdir 26_qual_h_script
 mkdir 27_align_script_h
 mkdir 28_stats_script_h
+mkdir 29_cat_modern_script
+mkdir 30_align_modern_script
