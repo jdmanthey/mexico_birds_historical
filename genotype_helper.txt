@@ -206,17 +206,3 @@ Myi_miniatus_XISTH_100074	GCA_001746935.2_mywa_2.1_genomic.fna
 Myi_miniatus_XISTH_113477	GCA_001746935.2_mywa_2.1_genomic.fna
 Myi_miniatus_XISTH_116692	GCA_001746935.2_mywa_2.1_genomic.fna
 Myi_miniatus_XISTH_99926	GCA_001746935.2_mywa_2.1_genomic.fna
-Xen_callizonus_27216	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
-Xen_callizonus_27217	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
-Xen_callizonus_3689	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
-Xen_callizonus_XISTH_100098	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
-Xen_callizonus_XISTH_100111	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
-Xen_callizonus_XISTH_113416	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
-Xen_callizonus_XISTH_99654	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
-Xen_callizonus_XISTH_99835	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
-Xen_callizonus_XISTH_99849	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
-Xen_callizonus_XISTH_99850	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
-Xen_callizonus_XISTH_99925	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
-Xen_mexicanus_SMS_ALTBAL023	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
-Xen_mexicanus_SMS_ALTBAL204	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
-Xen_mexicanus_SMS_CPM333	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
