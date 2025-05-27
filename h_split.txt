@@ -195,9 +195,4 @@ Myi_miniatus_61762_R1.part_003.fastq.gz	Myi_miniatus_61762_R2.part_003.fastq.gz
 Myi_miniatus_8329_R1.part_001.fastq.gz	Myi_miniatus_8329_R2.part_001.fastq.gz
 Myi_miniatus_8329_R1.part_002.fastq.gz	Myi_miniatus_8329_R2.part_002.fastq.gz
 Myi_miniatus_8329_R1.part_003.fastq.gz	Myi_miniatus_8329_R2.part_003.fastq.gz
-Xen_callizonus_27216_R1.part_001.fastq.gz	Xen_callizonus_27216_R2.part_001.fastq.gz
-Xen_callizonus_27216_R1.part_002.fastq.gz	Xen_callizonus_27216_R2.part_002.fastq.gz
-Xen_callizonus_27217_R1.part_001.fastq.gz	Xen_callizonus_27217_R2.part_001.fastq.gz
-Xen_callizonus_27217_R1.part_002.fastq.gz	Xen_callizonus_27217_R2.part_002.fastq.gz
-Xen_callizonus_3689_R1.part_001.fastq.gz	Xen_callizonus_3689_R2.part_001.fastq.gz
-Xen_callizonus_3689_R1.part_002.fastq.gz	Xen_callizonus_3689_R2.part_002.fastq.gz
+
