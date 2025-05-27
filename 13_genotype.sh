@@ -32,23 +32,38 @@ bgzip ${workdir}/02_vcf/${basename_array}.vcf
 #tabix
 tabix ${workdir}/02_vcf/${basename_array}.vcf.gz
 
-# filter individual vcf files
+# filter individual vcf files for different coverages
+bcftools view -i 'MIN(DP)>5' ${workdir}/02_vcf/${basename_array}.vcf.gz > \
+${workdir}/03_vcf/${basename_array}_6.vcf
+
 bcftools view -i 'MIN(DP)>7' ${workdir}/02_vcf/${basename_array}.vcf.gz > \
-${workdir}/03_vcf/${basename_array}.vcf
+${workdir}/03_vcf/${basename_array}_8.vcf
+
+bcftools view -i 'MIN(DP)>9' ${workdir}/02_vcf/${basename_array}.vcf.gz > \
+${workdir}/03_vcf/${basename_array}_10.vcf
 
 # bgzip
-bgzip ${workdir}/03_vcf/${basename_array}.vcf
+bgzip ${workdir}/03_vcf/${basename_array}_6.vcf
+bgzip ${workdir}/03_vcf/${basename_array}_8.vcf
+bgzip ${workdir}/03_vcf/${basename_array}_10.vcf
 
 #tabix
-tabix ${workdir}/03_vcf/${basename_array}.vcf.gz
+tabix ${workdir}/03_vcf/${basename_array}_6.vcf.gz
+tabix ${workdir}/03_vcf/${basename_array}_8.vcf.gz
+tabix ${workdir}/03_vcf/${basename_array}_10.vcf.gz
 
 # genotype stats
 echo ${basename_array} > ${basename_array}.stats
 
 # number of genotyped sites passing minimum depth filter
-echo "sites genotyped" >> ${basename_array}.stats
-gzip -cd ${workdir}/03_vcf/${basename_array}.vcf.gz | grep -v "^#" | wc -l >> ${basename_array}.stats
+echo "sites genotyped 6" >> ${basename_array}.stats
+gzip -cd ${workdir}/03_vcf/${basename_array}_6.vcf.gz | grep -v "^#" | wc -l >> ${basename_array}.stats
 
+echo "sites genotyped 8" >> ${basename_array}.stats
+gzip -cd ${workdir}/03_vcf/${basename_array}_8.vcf.gz | grep -v "^#" | wc -l >> ${basename_array}.stats
+
+echo "sites genotyped 10" >> ${basename_array}.stats
+gzip -cd ${workdir}/03_vcf/${basename_array}_10.vcf.gz | grep -v "^#" | wc -l >> ${basename_array}.stats
 
 
 
