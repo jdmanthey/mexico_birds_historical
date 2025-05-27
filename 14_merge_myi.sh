@@ -17,10 +17,11 @@ workdir=/lustre/scratch/jmanthey/08_mexico
 region_array=$( head -n${SLURM_ARRAY_TASK_ID} ${workdir}/scaffolds_warbler.txt | tail -n1 )
 
 # run bcftools to merge the vcf files
-bcftools merge -m id --regions ${region_array} ${workdir}/03_vcf/Myi_*vcf.gz > \
-${workdir}/04_vcf/Myi_${region_array}.vcf
+bcftools merge -m id --regions ${region_array} ${workdir}/03_vcf/Myi_*_6.vcf.gz > \
+${workdir}/04_vcf/Myi_${region_array}_6.vcf
 
-# filter for structure (minimum 43/46 individuals to keep a site)
-vcftools --vcf ${workdir}/04_vcf/Myi_${region_array}.vcf \
---max-missing 0.93 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
---recode-INFO-all --out ${workdir}/05_pca/Myi_structure_${region_array}
+bcftools merge -m id --regions ${region_array} ${workdir}/03_vcf/Myi_*_8.vcf.gz > \
+${workdir}/04_vcf/Myi_${region_array}_8.vcf
+
+bcftools merge -m id --regions ${region_array} ${workdir}/03_vcf/Myi_*_10.vcf.gz > \
+${workdir}/04_vcf/Myi_${region_array}_10.vcf
