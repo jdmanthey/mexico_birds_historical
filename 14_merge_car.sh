@@ -17,11 +17,12 @@ workdir=/lustre/scratch/jmanthey/08_mexico
 region_array=$( head -n${SLURM_ARRAY_TASK_ID} ${workdir}/scaffolds_warbler.txt | tail -n1 )
 
 # run bcftools to merge the vcf files
-bcftools merge -m id --regions ${region_array} ${workdir}/03_vcf/Car_*vcf.gz > \
-${workdir}/04_vcf/Car_${region_array}.vcf
+bcftools merge -m id --regions ${region_array} ${workdir}/03_vcf/Car_*_6.vcf.gz > \
+${workdir}/04_vcf/Car_${region_array}_6.vcf
 
-# filter for structure (minimum 31/34 individuals to keep a site)
-vcftools --vcf ${workdir}/04_vcf/Car_${region_array}.vcf \
---max-missing 0.9 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
---recode-INFO-all --out ${workdir}/05_pca/Car_structure_${region_array}
+bcftools merge -m id --regions ${region_array} ${workdir}/03_vcf/Car_*_8.vcf.gz > \
+${workdir}/04_vcf/Car_${region_array}_8.vcf
+
+bcftools merge -m id --regions ${region_array} ${workdir}/03_vcf/Car_*_10.vcf.gz > \
+${workdir}/04_vcf/Car_${region_array}_10.vcf
 
