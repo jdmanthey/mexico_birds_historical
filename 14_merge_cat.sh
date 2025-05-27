@@ -17,12 +17,13 @@ workdir=/lustre/scratch/jmanthey/08_mexico
 region_array=$( head -n${SLURM_ARRAY_TASK_ID} ${workdir}/scaffolds_thrush.txt | tail -n1 )
 
 # run bcftools to merge the vcf files
-bcftools merge -m id --regions ${region_array} ${workdir}/03_vcf/Cat_*vcf.gz > \
-${workdir}/04_vcf/Cat_${region_array}.vcf
+bcftools merge -m id --regions ${region_array} ${workdir}/03_vcf/Cat_*_6.vcf.gz > \
+${workdir}/04_vcf/Cat_${region_array}_6.vcf
 
-# filter for structure (minimum 53/56 individuals to keep a site)
-vcftools --vcf ${workdir}/04_vcf/Cat_${region_array}.vcf \
---max-missing 0.94 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
---recode-INFO-all --out ${workdir}/05_pca/Cat_structure_${region_array}
+bcftools merge -m id --regions ${region_array} ${workdir}/03_vcf/Cat_*_8.vcf.gz > \
+${workdir}/04_vcf/Cat_${region_array}_8.vcf
+
+bcftools merge -m id --regions ${region_array} ${workdir}/03_vcf/Cat_*_10.vcf.gz > \
+${workdir}/04_vcf/Cat_${region_array}_10.vcf
 
 
