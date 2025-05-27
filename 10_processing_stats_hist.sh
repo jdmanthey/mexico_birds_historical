@@ -5,7 +5,7 @@
 #SBATCH --nodes=1 --ntasks=4
 #SBATCH --time=48:00:00
 #SBATCH --mem-per-cpu=8G
-#SBATCH --array=1-81
+#SBATCH --array=1-78
 
 # define main working directory
 workdir=/lustre/scratch/jmanthey/08_mexico
