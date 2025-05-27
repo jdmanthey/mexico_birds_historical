@@ -76,6 +76,4 @@ Myi_miniatus_46170
 Myi_miniatus_46193
 Myi_miniatus_61762
 Myi_miniatus_8329
-Xen_callizonus_27216
-Xen_callizonus_27217
-Xen_callizonus_3689
+
