@@ -76,6 +76,4 @@ Myi_miniatus_46170	GCA_001746935.2_mywa_2.1_genomic.fna
 Myi_miniatus_46193	GCA_001746935.2_mywa_2.1_genomic.fna
 Myi_miniatus_61762	GCA_001746935.2_mywa_2.1_genomic.fna
 Myi_miniatus_8329	GCA_001746935.2_mywa_2.1_genomic.fna
-Xen_callizonus_27216	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
-Xen_callizonus_27217	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
-Xen_callizonus_3689	GCA_038380795.1_CAS-CDF_Pyrnan_1.0_genomic.fna
+
