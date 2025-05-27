@@ -5,7 +5,7 @@
 #SBATCH --nodes=1 --ntasks=12
 #SBATCH --time=48:00:00
 #SBATCH --mem-per-cpu=8G
-#SBATCH --array=1-142
+#SBATCH --array=1-130
 
 source activate bcftools
 
