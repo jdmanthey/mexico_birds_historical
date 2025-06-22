@@ -5,38 +5,35 @@ mkdir 01_cleaned_m
 mkdir 01_split_h
 mkdir 01_working_h
 mkdir 01_bam_files
+mkdir 01b_bam_files
 mkdir 02_vcf
+mkdir 02b_vcf
 mkdir 03_vcf
+mkdir 03b_vcf
 mkdir 04_vcf
+mkdir 04b_vcf
 mkdir 05_pca
+mkdir 05b_pca
 
-mkdir 06_stats6_atl
-mkdir 06_stats8_atl
-mkdir 06_stats10_atl
-mkdir 06_stats6_atl/windows
-mkdir 06_stats8_atl/windows
-mkdir 06_stats10_atl/windows
+mkdir 06_stats_atl
+mkdir 06_stats_atl/windows
+mkdir 06b_stats_atl
+mkdir 06b_stats_atl/windows
 
-mkdir 06_stats6_car
-mkdir 06_stats8_car
-mkdir 06_stats10_car
-mkdir 06_stats6_car/windows
-mkdir 06_stats8_car/windows
-mkdir 06_stats10_car/windows
+mkdir 06_stats_car
+mkdir 06_stats_car/windows
+mkdir 06b_stats_car
+mkdir 06b_stats_car/windows
 
-mkdir 06_stats6_cat
-mkdir 06_stats8_cat
-mkdir 06_stats10_cat
-mkdir 06_stats6_cat/windows
-mkdir 06_stats8_cat/windows
-mkdir 06_stats10_cat/windows
+mkdir 06_stats_cat
+mkdir 06_stats_cat/windows
+mkdir 06b_stats_cat
+mkdir 06b_stats_cat/windows
 
-mkdir 06_stats6_myi
-mkdir 06_stats8_myi
-mkdir 06_stats10_myi
-mkdir 06_stats6_myi/windows
-mkdir 06_stats8_myi/windows
-mkdir 06_stats10_myi/windows
+mkdir 06_stats_myi
+mkdir 06_stats_myi/windows
+mkdir 06b_stats_myi
+mkdir 06b_stats_myi/windows
 
 mkdir 20_combine_lanes
 mkdir 21_split_h_script
