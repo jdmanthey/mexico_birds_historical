@@ -46,6 +46,7 @@ mkdir 27_align_script_h
 mkdir 28_stats_script_h
 mkdir 29_cat_modern_script
 mkdir 30_align_modern_script
-mkdir 31_genotype_script
-mkdir 32_merge_genotyped_script
-mkdir 33_filter_vcf_script
+mkdir 31_downsample_script
+mkdir 32_genotype_script
+mkdir 33_merge_genotyped_script
+mkdir 34_filter_vcf_script
