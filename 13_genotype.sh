@@ -21,6 +21,7 @@ reference=$( head -n${SLURM_ARRAY_TASK_ID} ${workdir}/genotype_helper.txt | tail
 # define the reference genome
 refgenome=/home/jmanthey/references/${reference}
 
+# full datasets
 # run bcftools to genotype
 bcftools mpileup --skip-indels -C 0 -d 200 --min-MQ 10 --threads ${threads} \
 -f ${refgenome} ${workdir}/01_bam_files/${basename_array}_final.bam | \
@@ -34,44 +35,36 @@ tabix ${workdir}/02_vcf/${basename_array}.vcf.gz
 
 # filter individual vcf files for different coverages
 bcftools view -i 'MIN(DP)>5' ${workdir}/02_vcf/${basename_array}.vcf.gz > \
-${workdir}/03_vcf/${basename_array}_6.vcf
-
-bcftools view -i 'MIN(DP)>7' ${workdir}/02_vcf/${basename_array}.vcf.gz > \
-${workdir}/03_vcf/${basename_array}_8.vcf
-
-bcftools view -i 'MIN(DP)>9' ${workdir}/02_vcf/${basename_array}.vcf.gz > \
-${workdir}/03_vcf/${basename_array}_10.vcf
+${workdir}/03_vcf/${basename_array}.vcf
 
 # bgzip
-bgzip ${workdir}/03_vcf/${basename_array}_6.vcf
-bgzip ${workdir}/03_vcf/${basename_array}_8.vcf
-bgzip ${workdir}/03_vcf/${basename_array}_10.vcf
+bgzip ${workdir}/03_vcf/${basename_array}.vcf
 
 #tabix
-tabix ${workdir}/03_vcf/${basename_array}_6.vcf.gz
-tabix ${workdir}/03_vcf/${basename_array}_8.vcf.gz
-tabix ${workdir}/03_vcf/${basename_array}_10.vcf.gz
-
-# genotype stats
-echo ${basename_array} > ${basename_array}.stats
-
-# number of genotyped sites passing minimum depth filter
-echo "sites genotyped 6" >> ${basename_array}.stats
-gzip -cd ${workdir}/03_vcf/${basename_array}_6.vcf.gz | grep -v "^#" | wc -l >> ${basename_array}.stats
-
-echo "sites genotyped 8" >> ${basename_array}.stats
-gzip -cd ${workdir}/03_vcf/${basename_array}_8.vcf.gz | grep -v "^#" | wc -l >> ${basename_array}.stats
-
-echo "sites genotyped 10" >> ${basename_array}.stats
-gzip -cd ${workdir}/03_vcf/${basename_array}_10.vcf.gz | grep -v "^#" | wc -l >> ${basename_array}.stats
+tabix ${workdir}/03_vcf/${basename_array}.vcf.gz
 
 
+# downsampled datasets
+# run bcftools to genotype
+bcftools mpileup --skip-indels -C 0 -d 200 --min-MQ 10 --threads ${threads} \
+-f ${refgenome} ${workdir}/01b_bam_files/${basename_array}_final.bam | \
+bcftools call -m --threads ${threads} -o ${workdir}/02b_vcf/${basename_array}.vcf
 
+# bgzip
+bgzip ${workdir}/02b_vcf/${basename_array}.vcf
 
+#tabix
+tabix ${workdir}/02b_vcf/${basename_array}.vcf.gz
 
+# filter individual vcf files for different coverages
+bcftools view -i 'MIN(DP)>5' ${workdir}/02b_vcf/${basename_array}.vcf.gz > \
+${workdir}/03b_vcf/${basename_array}.vcf
 
+# bgzip
+bgzip ${workdir}/03b_vcf/${basename_array}.vcf
 
-
+#tabix
+tabix ${workdir}/03b_vcf/${basename_array}.vcf.gz
 
 
 
