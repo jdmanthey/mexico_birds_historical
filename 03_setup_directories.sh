@@ -35,6 +35,9 @@ mkdir 06_stats_myi/windows
 mkdir 06b_stats_myi
 mkdir 06b_stats_myi/windows
 
+mkdir 07_transversions
+mkdir 07b_transversions
+
 mkdir 20_combine_lanes
 mkdir 21_split_h_script
 mkdir 22_dedup_h_script
@@ -48,5 +51,4 @@ mkdir 29_cat_modern_script
 mkdir 30_align_modern_script
 mkdir 31_downsample_script
 mkdir 32_genotype_script
-mkdir 33_merge_genotyped_script
-mkdir 34_filter_vcf_script
+mkdir 33_merge_filter_script
