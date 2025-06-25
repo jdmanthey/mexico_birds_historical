@@ -23,13 +23,13 @@ ${workdir}/04_vcf/Myi_${region_array}.vcf
 bcftools merge -m id --regions ${region_array} ${workdir}/03b_vcf/Myi_*.vcf.gz > \
 ${workdir}/04b_vcf/Myi_${region_array}.vcf
 
-# filter for structure (minimum 42/44 individuals to keep a site)
+# filter for structure 
 vcftools --vcf ${workdir}/04_vcf/Myi_${region_array}.vcf --keep keep_myi.txt --thin 10000 \
---max-missing 0.95 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.9 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/05_pca/Myi_structure_${region_array}
 
 vcftools --vcf ${workdir}/04b_vcf/Myi_${region_array}.vcf --keep keep_myi.txt --thin 10000 \
---max-missing 0.95 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.9 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/05b_pca/Myi_structure_${region_array}
 
 # invariant and variant sites for stats 
@@ -53,13 +53,13 @@ tabix -p vcf ${workdir}/06_stats_myi/${region_array}.recode.vcf.gz
 
 tabix -p vcf ${workdir}/06b_stats_myi/${region_array}.recode.vcf.gz
 
-# filter for biallelic sites (minimum 42/44 individuals to keep a site)
+# filter for biallelic sites 
 vcftools --vcf ${workdir}/04_vcf/Myi_${region_array}.vcf --keep keep_myi.txt \
---max-missing 0.95 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.9 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/07_transversions/Myi_${region_array}
 
 vcftools --vcf ${workdir}/04b_vcf/Myi_${region_array}.vcf --keep keep_myi.txt \
---max-missing 0.95 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.9 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/07b_transversions/Myi_${region_array}
 
 # extract header for transversions subset
