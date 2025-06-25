@@ -23,13 +23,13 @@ ${workdir}/04_vcf/Cat_${region_array}.vcf
 bcftools merge -m id --regions ${region_array} ${workdir}/03b_vcf/Cat_*.vcf.gz > \
 ${workdir}/04b_vcf/Cat_${region_array}.vcf
 
-# filter for structure (minimum 53/56 individuals to keep a site)
+# filter for structure 
 vcftools --vcf ${workdir}/04_vcf/Cat_${region_array}.vcf --keep keep_cat.txt --thin 10000 \
---max-missing 0.94 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.9 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/05_pca/Cat_structure_${region_array}
 
 vcftools --vcf ${workdir}/04b_vcf/Cat_${region_array}.vcf --keep keep_cat.txt --thin 10000 \
---max-missing 0.94 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.9 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/05b_pca/Cat_structure_${region_array}
 
 # invariant and variant sites for stats 
@@ -53,13 +53,13 @@ tabix -p vcf ${workdir}/06_stats_cat/${region_array}.recode.vcf.gz
 
 tabix -p vcf ${workdir}/06b_stats_cat/${region_array}.recode.vcf.gz
 
-# filter for biallelic sites (minimum 53/56 individuals to keep a site)
+# filter for biallelic sites 
 vcftools --vcf ${workdir}/04_vcf/Cat_${region_array}.vcf --keep keep_cat.txt \
---max-missing 0.94 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.9 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/07_transversions/Cat_${region_array}
 
 vcftools --vcf ${workdir}/04b_vcf/Cat_${region_array}.vcf --keep keep_cat.txt \
---max-missing 0.94 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.9 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/07b_transversions/Cat_${region_array}
 
 # extract header for transversions subset
