@@ -23,13 +23,13 @@ ${workdir}/04_vcf/Car_${region_array}.vcf
 bcftools merge -m id --regions ${region_array} ${workdir}/03b_vcf/Car_*.vcf.gz > \
 ${workdir}/04b_vcf/Car_${region_array}.vcf
 
-# filter for structure (minimum 31/33 individuals to keep a site)
+# filter for structure 
 vcftools --vcf ${workdir}/04_vcf/Car_${region_array}.vcf --keep keep_car.txt --thin 10000 \
---max-missing 0.92 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.9 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/05_pca/Car_structure_${region_array}
 
 vcftools --vcf ${workdir}/04b_vcf/Car_${region_array}.vcf --keep keep_car.txt --thin 10000 \
---max-missing 0.92 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.9 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/05b_pca/Car_structure_${region_array}
 
 # invariant and variant sites for stats 
@@ -53,13 +53,13 @@ tabix -p vcf ${workdir}/06_stats_car/${region_array}.recode.vcf.gz
 
 tabix -p vcf ${workdir}/06b_stats_car/${region_array}.recode.vcf.gz
 
-# filter for biallelic sites (minimum 31/33 individuals to keep a site)
+# filter for biallelic sites 
 vcftools --vcf ${workdir}/04_vcf/Car_${region_array}.vcf --keep keep_car.txt \
---max-missing 0.92 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.9 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/07_transversions/Car_${region_array}
 
 vcftools --vcf ${workdir}/04b_vcf/Car_${region_array}.vcf --keep keep_car.txt \
---max-missing 0.92 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.9 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/07b_transversions/Car_${region_array}
 
 # extract header for transversions subset
