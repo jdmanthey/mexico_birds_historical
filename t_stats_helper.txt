@@ -1,0 +1,4 @@
+Atl_transversions.vcf	popmap_stats_atl.txt
+Car_transversions.vcf	popmap_stats_car.txt
+Cat_transversions.vcf	popmap_stats_cat.txt
+Myi_transversions.vcf	popmap_stats_myi.txt
