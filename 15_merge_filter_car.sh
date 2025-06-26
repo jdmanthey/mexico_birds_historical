@@ -25,11 +25,11 @@ ${workdir}/04b_vcf/Car_${region_array}.vcf
 
 # filter for structure 
 vcftools --vcf ${workdir}/04_vcf/Car_${region_array}.vcf --keep keep_car.txt --thin 10000 \
---max-missing 0.9 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.8 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/05_pca/Car_structure_${region_array}
 
 vcftools --vcf ${workdir}/04b_vcf/Car_${region_array}.vcf --keep keep_car.txt --thin 10000 \
---max-missing 0.9 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.8 --mac 4 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/05b_pca/Car_structure_${region_array}
 
 # invariant and variant sites for stats 
