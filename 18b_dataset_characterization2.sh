@@ -4,51 +4,51 @@ source activate bcftools
 
 # 06_stats_atl
 
-grep "After filtering" slurm-19155079_1.out | grep "Sites" | cut -d ' ' -f4 > 06_stats_atl.snps
+grep "After filtering" slurm-19233624_1.out | grep "Sites" | cut -d ' ' -f4 > 06_stats_atl.snps
 
-grep "After filtering" slurm-19155079_1.out | grep "Sites" | cut -d ' ' -f9 > 06_stats_atl.sites
+grep "After filtering" slurm-19233624_1.out | grep "Sites" | cut -d ' ' -f9 > 06_stats_atl.sites
 
 # 06_stats_car
 
-grep "After filtering" slurm-19155079_2.out | grep "Sites" | cut -d ' ' -f4 > 06_stats_car.snps
+grep "After filtering" slurm-19233624_2.out | grep "Sites" | cut -d ' ' -f4 > 06_stats_car.snps
 
-grep "After filtering" slurm-19155079_2.out | grep "Sites" | cut -d ' ' -f9 > 06_stats_car.sites
+grep "After filtering" slurm-19233624_2.out | grep "Sites" | cut -d ' ' -f9 > 06_stats_car.sites
 
 # 06_stats_cat
 
-grep "After filtering" slurm-19155079_3.out | grep "Sites" | cut -d ' ' -f4 > 06_stats_cat.snps
+grep "After filtering" slurm-19233624_3.out | grep "Sites" | cut -d ' ' -f4 > 06_stats_cat.snps
 
-grep "After filtering" slurm-19155079_3.out | grep "Sites" | cut -d ' ' -f9 > 06_stats_cat.sites
+grep "After filtering" slurm-19233624_3.out | grep "Sites" | cut -d ' ' -f9 > 06_stats_cat.sites
 
 # 06_stats_myi
 
-grep "After filtering" slurm-19155079_4.out | grep "Sites" | cut -d ' ' -f4 > 06_stats_myi.snps
+grep "After filtering" slurm-19233624_4.out | grep "Sites" | cut -d ' ' -f4 > 06_stats_myi.snps
 
-grep "After filtering" slurm-19155079_4.out | grep "Sites" | cut -d ' ' -f9 > 06_stats_myi.sites
+grep "After filtering" slurm-19233624_4.out | grep "Sites" | cut -d ' ' -f9 > 06_stats_myi.sites
 
 # 06b_stats_atl
 
-grep "After filtering" slurm-19155079_5.out | grep "Sites" | cut -d ' ' -f4 > 06b_stats_atl.snps
+grep "After filtering" slurm-19233624_5.out | grep "Sites" | cut -d ' ' -f4 > 06b_stats_atl.snps
 
-grep "After filtering" slurm-19155079_5.out | grep "Sites" | cut -d ' ' -f9 > 06b_stats_atl.sites
+grep "After filtering" slurm-19233624_5.out | grep "Sites" | cut -d ' ' -f9 > 06b_stats_atl.sites
 
 # 06b_stats_car
 
-grep "After filtering" slurm-19155079_6.out | grep "Sites" | cut -d ' ' -f4 > 06b_stats_car.snps
+grep "After filtering" slurm-19233624_6.out | grep "Sites" | cut -d ' ' -f4 > 06b_stats_car.snps
 
-grep "After filtering" slurm-19155079_6.out | grep "Sites" | cut -d ' ' -f9 > 06b_stats_car.sites
+grep "After filtering" slurm-19233624_6.out | grep "Sites" | cut -d ' ' -f9 > 06b_stats_car.sites
 
 # 06b_stats_cat
 
-grep "After filtering" slurm-19155079_7.out | grep "Sites" | cut -d ' ' -f4 > 06b_stats_cat.snps
+grep "After filtering" slurm-19233624_7.out | grep "Sites" | cut -d ' ' -f4 > 06b_stats_cat.snps
 
-grep "After filtering" slurm-19155079_7.out | grep "Sites" | cut -d ' ' -f9 > 06b_stats_cat.sites
+grep "After filtering" slurm-19233624_7.out | grep "Sites" | cut -d ' ' -f9 > 06b_stats_cat.sites
 
 # 06b_stats_myi
 
-grep "After filtering" slurm-19155079_8.out | grep "Sites" | cut -d ' ' -f4 > 06b_stats_myi.snps
+grep "After filtering" slurm-19233624_8.out | grep "Sites" | cut -d ' ' -f4 > 06b_stats_myi.snps
 
-grep "After filtering" slurm-19155079_8.out | grep "Sites" | cut -d ' ' -f9 > 06b_stats_myi.sites
+grep "After filtering" slurm-19233624_8.out | grep "Sites" | cut -d ' ' -f9 > 06b_stats_myi.sites
 
 
 
