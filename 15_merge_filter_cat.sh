@@ -34,12 +34,12 @@ vcftools --vcf ${workdir}/04b_vcf/Cat_${region_array}.vcf --keep keep_cat.txt --
 
 # invariant and variant sites for stats 
 vcftools --vcf ${workdir}/04_vcf/Cat_${region_array}.vcf --keep keep_cat.txt \
---max-missing 0.9 --max-alleles 2 \
+--max-missing 0.8 --max-alleles 2 \
 --max-maf 0.49 --remove-indels --recode --recode-INFO-all \
 --out ${workdir}/06_stats_cat/${region_array}
 
 vcftools --vcf ${workdir}/04b_vcf/Cat_${region_array}.vcf --keep keep_cat.txt \
---max-missing 0.9 --max-alleles 2 \
+--max-missing 0.8 --max-alleles 2 \
 --max-maf 0.49 --remove-indels --recode --recode-INFO-all \
 --out ${workdir}/06b_stats_cat/${region_array}
 
@@ -55,11 +55,11 @@ tabix -p vcf ${workdir}/06b_stats_cat/${region_array}.recode.vcf.gz
 
 # filter for biallelic sites 
 vcftools --vcf ${workdir}/04_vcf/Cat_${region_array}.vcf --keep keep_cat.txt \
---max-missing 0.9 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.8 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/07_transversions/Cat_${region_array}
 
 vcftools --vcf ${workdir}/04b_vcf/Cat_${region_array}.vcf --keep keep_cat.txt \
---max-missing 0.9 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.8 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/07b_transversions/Cat_${region_array}
 
 # extract header for transversions subset
