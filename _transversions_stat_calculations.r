@@ -11,7 +11,7 @@ calc_diff <- TRUE				# calculate pairwise FST and DXY for all pairwise comps. of
 
 
 filename_simple <- args[1]
-filename_simple <- strsplit(filename_simple, ".vcf")[[1]][1]
+filename_simple <- strsplit(filename_simple, ".subset.vcf")[[1]][1]
 
 
 # files in windows or whole chromosomes
