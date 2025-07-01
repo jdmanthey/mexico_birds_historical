@@ -34,12 +34,12 @@ vcftools --vcf ${workdir}/04b_vcf/Car_${region_array}.vcf --keep keep_car.txt --
 
 # invariant and variant sites for stats 
 vcftools --vcf ${workdir}/04_vcf/Car_${region_array}.vcf --keep keep_car.txt \
---max-missing 0.8 --max-alleles 2 \
+--max-missing 0.65 --max-alleles 2 \
 --max-maf 0.49 --remove-indels --recode --recode-INFO-all \
 --out ${workdir}/06_stats_car/${region_array}
 
 vcftools --vcf ${workdir}/04b_vcf/Car_${region_array}.vcf --keep keep_car.txt \
---max-missing 0.8 --max-alleles 2 \
+--max-missing 0.65 --max-alleles 2 \
 --max-maf 0.49 --remove-indels --recode --recode-INFO-all \
 --out ${workdir}/06b_stats_car/${region_array}
 
@@ -55,11 +55,11 @@ tabix -p vcf ${workdir}/06b_stats_car/${region_array}.recode.vcf.gz
 
 # filter for biallelic sites 
 vcftools --vcf ${workdir}/04_vcf/Car_${region_array}.vcf --keep keep_car.txt \
---max-missing 0.8 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.65 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/07_transversions/Car_${region_array}
 
 vcftools --vcf ${workdir}/04b_vcf/Car_${region_array}.vcf --keep keep_car.txt \
---max-missing 0.8 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
+--max-missing 0.65 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
 --recode-INFO-all --out ${workdir}/07b_transversions/Car_${region_array}
 
 # extract header for transversions subset
