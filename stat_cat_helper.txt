@@ -1,0 +1,8 @@
+35_stats_atl	CM051563.1__100000001__100100000__stats.txt	stat_atl_full.txt
+35b_stats_atl	CM051563.1__100000001__100100000__stats.txt	stat_atl_down.txt
+36_stats_car	CM027507.1__100000001__100100000__stats.txt	stat_car_full.txt
+36b_stats_car	CM027507.1__100000001__100100000__stats.txt	stat_car_down.txt
+37_stats_cat	NC_046221.1__100000001__100100000__stats.txt	stat_cat_full.txt
+37b_stats_cat	NC_046221.1__100000001__100100000__stats.txt	stat_cat_down.txt
+38_stats_myi	CM027507.1__100000001__100100000__stats.txt	stat_myi_full.txt
+38b_stats_myi	CM027507.1__100000001__100100000__stats.txt	stat_myi_down.txt
