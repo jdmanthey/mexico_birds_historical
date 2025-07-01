@@ -2,10 +2,10 @@
 #SBATCH --chdir=./
 #SBATCH --job-name=t_stats
 #SBATCH --partition nocona
-#SBATCH --nodes=1 --ntasks=8
+#SBATCH --nodes=1 --ntasks=4
 #SBATCH --time=48:00:00
 #SBATCH --mem-per-cpu=8G
-#SBATCH --array=1-4
+#SBATCH --array=1-137
 
 source activate bcftools
 
