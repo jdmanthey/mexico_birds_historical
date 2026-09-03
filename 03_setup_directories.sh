@@ -8,35 +8,51 @@ mkdir 01_bam_files
 mkdir 01b_bam_files
 mkdir 02_vcf
 mkdir 02b_vcf
+mkdir 02c_vcf
 mkdir 03_vcf
 mkdir 03b_vcf
+mkdir 03c_vcf
 mkdir 04_vcf
 mkdir 04b_vcf
+mkdir 04c_vcf
 mkdir 05_pca
 mkdir 05b_pca
+mkdir 05c_pca
 
 mkdir 06_stats_atl
 mkdir 06_stats_atl/windows
 mkdir 06b_stats_atl
 mkdir 06b_stats_atl/windows
+mkdir 06c_stats_atl
+mkdir 06c_stats_atl/windows
 
 mkdir 06_stats_car
 mkdir 06_stats_car/windows
 mkdir 06b_stats_car
 mkdir 06b_stats_car/windows
+mkdir 06c_stats_car
+mkdir 06c_stats_car/windows
 
 mkdir 06_stats_cat
 mkdir 06_stats_cat/windows
 mkdir 06b_stats_cat
 mkdir 06b_stats_cat/windows
+mkdir 06c_stats_cat
+mkdir 06c_stats_cat/windows
 
 mkdir 06_stats_myi
 mkdir 06_stats_myi/windows
 mkdir 06b_stats_myi
 mkdir 06b_stats_myi/windows
+mkdir 06c_stats_myi
+mkdir 06c_stats_myi/windows
 
 mkdir 07_transversions
 mkdir 07b_transversions
+mkdir 07c_transversions
+
+mkdir 08_snpeff
+mkdir 08b_snpeff
 
 mkdir 20_combine_lanes
 mkdir 21_split_h_script
@@ -53,3 +69,4 @@ mkdir 31_downsample_script
 mkdir 32_genotype_script
 mkdir 33_merge_filter_script
 mkdir 34_genotyping_stats
+mkdir 35_snpeff
