@@ -53,6 +53,15 @@ tabix -p vcf ${workdir}/06_stats_myi/${region_array}.recode.vcf.gz
 
 tabix -p vcf ${workdir}/06b_stats_myi/${region_array}.recode.vcf.gz
 
+# filter for biallelic SNPs for SNPeff
+vcftools --vcf ${workdir}/04_vcf/Myi_${region_array}.vcf --keep keep_myi.txt \
+--max-missing 0.8 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
+--recode-INFO-all --out ${workdir}/08_snpeff/Myi_${region_array}
+
+vcftools --vcf ${workdir}/04b_vcf/Myi_${region_array}.vcf --keep keep_myi.txt \
+--max-missing 0.8 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
+--recode-INFO-all --out ${workdir}/08b_snpeff/Myi_${region_array}
+
 # filter for biallelic sites 
 vcftools --vcf ${workdir}/04_vcf/Myi_${region_array}.vcf --keep keep_myi.txt \
 --max-missing 0.65 --mac 2 --max-alleles 2 --max-maf 0.49 --recode \
