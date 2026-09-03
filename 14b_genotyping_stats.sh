@@ -28,6 +28,10 @@ samtools depth  ${workdir}/01_bam_files/${basename_array}_final.bam  |  awk '{su
 echo "sum depth downsampled" >> ${basename_array}.stats
 samtools depth  ${workdir}/01b_bam_files/${basename_array}_final.bam  |  awk '{sum+=$3} END { print sum }' >> ${basename_array}.stats
 
+# samtools depth sum of aligned sites
+echo "sum depth downsampled" >> ${basename_array}.stats
+samtools depth  ${workdir}/01c_bam_files/${basename_array}_final.bam  |  awk '{sum+=$3} END { print sum }' >> ${basename_array}.stats
+
 # number of genotyped sites passing minimum depth filter
 echo "sites genotyped full" >> ${basename_array}.stats
 gzip -cd ${workdir}/03_vcf/${basename_array}.vcf.gz | grep -v "^#" | wc -l >> ${basename_array}.stats
@@ -35,6 +39,10 @@ gzip -cd ${workdir}/03_vcf/${basename_array}.vcf.gz | grep -v "^#" | wc -l >> ${
 # number of genotyped sites passing minimum depth filter
 echo "sites genotyped downsampled" >> ${basename_array}.stats
 gzip -cd ${workdir}/03b_vcf/${basename_array}.vcf.gz | grep -v "^#" | wc -l >> ${basename_array}.stats
+
+# number of genotyped sites passing minimum depth filter
+echo "sites genotyped downsampled" >> ${basename_array}.stats
+gzip -cd ${workdir}/03c_vcf/${basename_array}.vcf.gz | grep -v "^#" | wc -l >> ${basename_array}.stats
 
 
 
