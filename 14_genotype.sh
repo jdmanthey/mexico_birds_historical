@@ -67,5 +67,27 @@ bgzip ${workdir}/03b_vcf/${basename_array}.vcf
 tabix ${workdir}/03b_vcf/${basename_array}.vcf.gz
 
 
+# mapdamage datasets
+# run bcftools to genotype
+bcftools mpileup --skip-indels -C 0 -d 200 --min-MQ 10 --threads ${threads} \
+-f ${refgenome} ${workdir}/01c_bam_files/${basename_array}_final.bam | \
+bcftools call -m --threads ${threads} -o ${workdir}/02c_vcf/${basename_array}.vcf
+
+# bgzip
+bgzip ${workdir}/02c_vcf/${basename_array}.vcf
+
+#tabix
+tabix ${workdir}/02c_vcf/${basename_array}.vcf.gz
+
+# filter individual vcf files for different coverages
+bcftools view -i 'MIN(DP)>5' ${workdir}/02c_vcf/${basename_array}.vcf.gz > \
+${workdir}/03c_vcf/${basename_array}.vcf
+
+# bgzip
+bgzip ${workdir}/03c_vcf/${basename_array}.vcf
+
+#tabix
+tabix ${workdir}/03c_vcf/${basename_array}.vcf.gz
+
 
 
