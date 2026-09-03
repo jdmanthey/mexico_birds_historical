@@ -95,7 +95,11 @@ mapDamage -i ${workdir}/01_bam_files/${basename_array}_prefinal.bam -r ${refgeno
 # index the final bam file
 samtools index ${workdir}/01_bam_files/${basename_array}_final.bam
 
-# remove the prefinal bam file and index
-rm ${workdir}/01_bam_files/${basename_array}_prefinal.bam
-rm ${workdir}/01_bam_files/${basename_array}_prefinal.bam.bai
+# move the mapdamage scaled bams to another directory
+mv ${workdir}/01_bam_files/${basename_array}_final.bam ${workdir}/01c_bam_files/${basename_array}_final.bam
+mv ${workdir}/01_bam_files/${basename_array}_final.bam.bai ${workdir}/01c_bam_files/${basename_array}_final.bam.bai
+
+# rename the prefinal bam file and index
+mv ${workdir}/01_bam_files/${basename_array}_prefinal.bam ${workdir}/01_bam_files/${basename_array}_final.bam
+mv ${workdir}/01_bam_files/${basename_array}_prefinal.bam.bai ${workdir}/01_bam_files/${basename_array}_final.bam.bai
 
